@@ -71,6 +71,7 @@ button:focus{
     height: 48px;
     box-shadow: 0 18px 40px rgba(23, 153, 125, 0.1);
     border-radius: 8px;
+    color: var(--color-secondary);
     background-color: #ffffff;
     font-size: 18px;
     margin-left: 25px;
@@ -94,7 +95,6 @@ button:focus{
 .primary-menu .menu-content{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     min-height: 60px;
 }
 
@@ -203,6 +203,7 @@ button:focus{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .service-card .card-icon{
@@ -214,6 +215,9 @@ button:focus{
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+}
+.service-card h4{
+    height: 50px;
 }
 /* Promo Section */
 .section-promo{
@@ -238,6 +242,7 @@ button:focus{
 .section-promo .promo-row .promo-1{
     background-image: url('/assets/images/Subtraction_1.png');
     padding: 30px;
+    box-shadow: 0 10px 40px rgba(23, 153, 125, 0.1);
 }
 .section-promo .promo-row .promo-1 h4{
     font-size: 24px;
@@ -251,7 +256,7 @@ button:focus{
     font-weight: 700;
 }
 .section-promo .promo-row .promo-2{
-    background-image: url('/assets/images/Promo1.png');
+    background-image: url('/assets/images/Promo1.png'), linear-gradient(to right, #FED165, #FED165);
     padding: 20px;
     justify-content: center;
 }
@@ -275,7 +280,7 @@ button:focus{
     justify-content: center;
 }
 .section-promo .promo-row .promo-3{
-    background-image: url('/assets/images/Promo2.png');
+    background-image: url('/assets/images/Promo2.png'), linear-gradient(to right, #00836A, #00836A);
     padding: 20px;
     justify-content: center;
 }
@@ -315,7 +320,6 @@ button:focus{
 /* Footer */
 .footer{
     background-image:url('/assets/images/Artwork-b.png'), linear-gradient(to right bottom,#00775f,#00775f);
-    /* height: 1000px; */
     background-position: bottom right;
     background-repeat: no-repeat;
     padding: 50px;
@@ -335,7 +339,6 @@ button:focus{
     padding-right: 150px;
 }
 .footer .footer-card h2{
-    height: 55px;
     color: var(--white);
     font-size: 40px;
     font-weight: 700;
@@ -368,30 +371,32 @@ button:focus{
 /* footer menu */
 .footer .footer-menu{
     margin-top: 150px;
-}
-.footer .footer-menu .menu-header{
     display: grid;
-    grid-template-columns: 300px 90px;
+    grid-template-columns: 300px auto;
     padding: 15px 0;
 }
-.footer .footer-menu .menu-header h4{
+
+.footer .footer-menu h4{
     color: var(--white);
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     border-bottom: 2px solid var(--white);
     padding-bottom: 5px;
+    width: 85px;
 }
-.footer .footer-menu .menu{
+.footer .footer-menu .service-list{
     display: grid;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: 300px 300px;
 }
+.footer .footer-menu .menu-list .footer-link,
 .footer .footer-menu .menu .footer-link{
     color: var(--white);
     font-family: Manrope;
     font-size: 18px;
     font-weight: 600;
 }
+.footer .footer-menu .menu-list ul li,
 .footer .footer-menu .menu ul li{
     padding:15px 0;
 }
@@ -410,4 +415,164 @@ button:focus{
     font-size: 18px;
     font-weight: 400;
     margin-top: 50px;
+}
+
+
+
+
+/* Responsive */
+@media only screen and (max-width: 1440px) {
+    .line{
+        width: 700px;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .line{
+        width: 500px;
+        margin-left: 0;
+    }
+    .footer{
+        background-image: linear-gradient(to right bottom,#00775f,rgb(0, 119, 95, 0.5)), url('/assets/images/Artwork-b.png');
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .section-hero{
+        background-image: linear-gradient(to right bottom,#00775f,#68f893);
+        height: 95vh;
+    }
+    
+    .section-hero .hero-content{
+        height: 95vh;
+    }
+
+    .service-content {
+        margin-top: 0;
+    }
+    .section-promo .promo-row{
+        grid-template-columns: auto;
+        margin-right: 0;
+    }
+
+    .footer .footer-card {
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+    .footer .footer-card button{
+        width: 200px;
+    }
+    .line{
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+
+    .line{
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .service-row{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer .footer-menu {
+        grid-template-columns: 200px auto;
+        margin-top: 70px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .primary-heading {
+        font-size: 55px;
+    }
+    .hero-content .form-search {
+        height: 181px;
+        padding: 20px 25px;
+    }
+
+
+    .footer{
+        background-image:linear-gradient(to right bottom,var(--color-primary),#68f893);
+    }
+    .footer .footer-card{
+        flex-direction: column;
+        justify-content: center;
+        height: inherit;
+        background-position: center bottom;
+    }
+    .footer .footer-card .card-left{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer .footer-card h2{
+        margin-bottom: 20px;
+    }
+    .footer .footer-card button{
+        margin: 20px;
+    }
+
+    .footer .footer-menu {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer .footer-menu .service-list {
+        grid-template-columns: auto;
+    }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    .primary-menu .menu-content{
+        flex-direction: column;
+    }
+
+
+    .primary-menu .top-menu {
+        flex-direction: column;
+    }
+
+    .hero-content .form-search {
+        height: 230px;
+        width: 100%;
+    }
+    .hero-content .form-search input{
+        display: block;
+        width: 100%;
+    }
+
+    .hero-content .form-search .btn {
+        padding: 10px 20px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .service-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .section-feed .feed-row{
+        grid-template-columns: auto;
+    }
+
+    .footer {
+        padding: 50px 10px;
+    }
+
+    .footer .footer-card h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .footer .footer-card button {
+        height: 45px;
+    }
 }
