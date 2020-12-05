@@ -99,6 +99,34 @@ button:focus{
 }
 
 
+.primary-menu #berger{
+    display: none;
+}
+.primary-menu .berger{
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 40px;
+    transform: rotate(-90deg);
+
+
+  /* Legacy vendor prefixes that you probably don't need... */
+
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
 .primary-menu .top-menu{
     display: flex;
     align-items: center;
@@ -530,13 +558,17 @@ button:focus{
 
 
 @media only screen and (max-width: 500px) {
+    .primary-menu .berger{
+        display: block;
+    }
 
     .primary-menu .menu-content{
-        flex-direction: column;
+        align-items: center;
     }
 
 
     .primary-menu .top-menu {
+        display: none;
         flex-direction: column;
     }
 
